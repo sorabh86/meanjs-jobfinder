@@ -1,4 +1,4 @@
-<section>
+<section class="container">
   <div class="page-header">
     <h1>{{vm.job._id ? 'Edit Job' : 'New Job'}}</h1>
   </div>
@@ -6,11 +6,69 @@
     <form name="vm.form.jobForm" class="form-horizontal" ng-submit="vm.save(vm.form.jobForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Name</label>
-          <input name="name" type="text" ng-model="vm.job.name" id="name" class="form-control" placeholder="Name" required>
-          <div ng-messages="vm.form.jobForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Job name is required.</p>
+          <label class="control-label" for="company">Company</label>
+          <input name="company" type="text" ng-model="vm.job.company" id="company" class="form-control" placeholder="Company" required>
+          <div ng-messages="vm.form.jobForm.company.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Job Company is required.</p>
           </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="title">Title</label>
+          <input name="title" type="text" ng-model="vm.job.title" id="title" class="form-control" placeholder="Title" required>
+          <div ng-messages="vm.form.jobForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Job Title is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="description">Description</label>
+          <textarea name="description" type="text" ng-model="vm.job.description" id="description" class="form-control" placeholder="Description"></textarea>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="requirements">Requirements</label>
+          <input name="requirements" type="text" ng-model="vm.job.requirements" id="requirements" class="form-control" placeholder="Requirements">
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="hourly_wage">Hourly Wage</label>
+          <input name="hourly_wage" type="text" ng-model="vm.job.hourly_wage" id="Hourly Wage" class="form-control" placeholder="hourly_wage">
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="state">State</label>
+          <select name="state" id="state" ng-model="vm.job.state" placeholder="state" class="form-control">
+            <option value="AP">ANDHRA PRADESH</option>
+            <option value="AR">ARUNACHAL PRADESH</option>
+            <option value="AS">ASSAM</option>
+            <option value="BR">BIHAR</option>
+            <option value="CG">CHHATTISGARH</option>
+            <option value="DL">DELHI</option>
+            <option value="GA">GOA</option>
+            <option value="GJ">GUJARAT</option>
+            <option value="HR">HARYANA</option>
+            <option value="HP">HIMACHAL PRADESH</option>
+            <option value="JK">JAMMU &amp; KASHMIR</option>
+            <option value="JS">JHARKHAND</option>
+            <option value="KA">KARNATAKA</option>
+            <option value="KL">KERALA</option>
+            <option value="MP">MADHYA PRADESH</option>
+            <option value="MH">MAHARASHTRA</option>
+            <option value="MN">MANIPUR</option>
+            <option value="ML">MEGHALAYA</option>
+            <option value="MZ">MIZORAM</option>
+            <option value="NL">NAGALAND</option>
+            <option value="OR">ORISSA</option>
+            <option value="PB">PUNJAB</option>
+            <option value="RJ">RAJASTHAN</option>
+            <option value="SK">SIKKIM</option>
+            <option value="TN">TAMIL NADU</option>
+            <option value="TR">TRIPURA</option>
+            <option value="UK">UTTARAKHAND</option>
+            <option value="UP">UTTAR PRADESH</option>
+            <option value="WB">WEST BENGAL</option>
+          </select>
+          <!-- <input name="state" type="text" ng-model="vm.job.state" id="state" class="form-control" placeholder="state"> -->
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="contact_email">Contact Email</label>
+          <input name="contact_email" type="text" ng-model="vm.job.contact_email" id="contact_email" class="form-control" placeholder="contact_email">
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.job._id ? 'Update' : 'Create'}}</button>

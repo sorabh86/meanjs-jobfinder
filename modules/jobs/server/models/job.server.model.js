@@ -10,10 +10,40 @@ var mongoose = require('mongoose'),
  * Job Schema
  */
 var JobSchema = new Schema({
-  name: {
+  company: {
     type: String,
     default: '',
-    required: 'Please fill Job name',
+    required: 'Company cannot be blank',
+    trim: true
+  },
+  title: {
+    type: String,
+    default: '',
+    required: 'Please fill Job title',
+    trim: true
+  },
+  description: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  requirements: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  hourly_wage: {
+    type: Number,
+    default: '',
+    trim: true
+  },
+  state: {
+    type: String,
+    default: ''
+  },
+  contact_email: {
+    type: String,
+    default: '',
     trim: true
   },
   created: {
