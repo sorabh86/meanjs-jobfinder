@@ -1,6 +1,15 @@
 <section class="container">
   <div class="page-header">
-    <h1 ng-bind="vm.job.name"></h1>
+    <h1><span ng-bind="vm.job.title"></span> <small ng-bind="vm.job.company"></small></h1>
+    <p ng-bind="vm.job.description"></p>
+    <ul>
+      <li><strong>Job Poster</strong>: {{vm.job.user.displayName}}</li>
+      <li><strong>Location</strong>: {{vm.job.state}}</li>
+      <li><strong>Company Name</strong>: {{vm.job.company}}</li>
+      <li><strong>Hourly Wage</strong>: {{vm.job.hourly_wage}}</li>
+      <li><strong>Requirements</strong>: {{vm.job.requirements}}</li>
+      <li><strong>Contact Email</strong>: {{vm.job.contact_email}}</li>
+    </ul>
   </div>
   <div class="pull-right"
        ng-show="vm.job.isCurrentUserOwner">

@@ -6,14 +6,19 @@
     <a ng-repeat="job in vm.jobs"
        ui-sref="jobs.view({ jobId: job._id })"
        class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="job.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="job.user" ng-bind="job.user.displayName"></span>
-        <span ng-if="!job.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="job.name"></h4>
+      <p>
+        <small class="list-group-item-text">
+          Posted on
+          <span ng-bind="job.created | date:'mediumDate'"></span>
+          by
+          <span ng-if="job.user" ng-bind="job.user.displayName"></span>
+          <span ng-if="!job.user">Deleted User</span>
+        </small>
+      </p>
+      <h4 class="list-group-item-heading" ng-bind="job.title"></h4>
+      <p><strong>Company</strong>: {{job.company}}</p>
+      <p><strong>Hourly Wage</strong>: {{job.hourly_wage}}</p>
+      <p ng-bind="job.description | limitTo: 150"></p>
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.jobs.$resolved && !vm.jobs.length">
